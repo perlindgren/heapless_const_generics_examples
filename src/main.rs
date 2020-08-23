@@ -24,4 +24,7 @@ fn main() {
 
     let v: Vec<u8, 8> = Vec::from_slice(&[1, 2, 3, 5, 8]).unwrap();
     println!("v {:?}", &v);
+
+    let serialized = serde_json::to_string(&v).unwrap();
+    println!("serialized = {}", serialized);
 }
