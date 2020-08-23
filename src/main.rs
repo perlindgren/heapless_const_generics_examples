@@ -1,4 +1,4 @@
-use heapless::{de, ser, Vec};
+use heapless::Vec;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, Clone, Copy)]
