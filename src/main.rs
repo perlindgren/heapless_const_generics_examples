@@ -1,7 +1,7 @@
 use heapless::{de, ser, Vec};
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, Copy)]
 struct Point {
     x: i32,
     y: i32,
@@ -25,6 +25,10 @@ fn main() {
     let v: Vec<u8, 8> = Vec::from_slice(&[1, 2, 3, 5, 8]).unwrap();
     println!("v {:?}", &v);
 
+    let serialized = serde_json::to_string(&v).unwrap();
+    println!("serialized = {}", serialized);
+
+    let v: Vec<Point, 8> = Vec::from_slice(&[Point { x: 1, y: 2 }, Point { x: 1, y: 2 }]).unwrap();
     let serialized = serde_json::to_string(&v).unwrap();
     println!("serialized = {}", serialized);
 }
