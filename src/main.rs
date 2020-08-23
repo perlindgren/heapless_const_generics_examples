@@ -31,4 +31,8 @@ fn main() {
     let v: Vec<Point, 8> = Vec::from_slice(&[Point { x: 1, y: 2 }, Point { x: 1, y: 2 }]).unwrap();
     let serialized = serde_json::to_string(&v).unwrap();
     println!("serialized = {}", serialized);
+
+    // Convert the JSON string back to a Vec<Point, 8>.
+    let deserialized: Vec<Point, 8> = serde_json::from_str(&serialized).unwrap();
+    println!("deserialized = {:?}", deserialized);
 }
