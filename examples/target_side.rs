@@ -6,6 +6,7 @@ use serde::Serialize;
 use serde_cbor::{ser::SliceWrite, Serializer};
 use std::fs::File;
 use std::io::prelude::*;
+
 fn main() {
     let v: Vec<_, 8> = Vec::from_slice(&[Point { x: 1, y: 2 }, Point { x: 1, y: 2 }]).unwrap();
     let mut buf = [0u8; 100];
