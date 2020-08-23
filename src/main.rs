@@ -21,4 +21,7 @@ fn main() {
 
     // Prints deserialized = Point { x: 1, y: 2 }
     println!("deserialized = {:?}", deserialized);
+
+    let v: Vec<u8, 8> = Vec::from_slice(&[1, 2, 3, 5, 8]).unwrap();
+    println!("v {:?}", &v);
 }
